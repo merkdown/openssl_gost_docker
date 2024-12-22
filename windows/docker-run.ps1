@@ -1,0 +1,1 @@
+docker run -v ${PWD}\labs:/labs -it gaika:sslgost_curl

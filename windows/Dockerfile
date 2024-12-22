@@ -36,11 +36,3 @@ RUN ./configure --prefix=$CURL_DIR --with-openssl=$OPENSSL_DIR
 RUN make -j 12 && make -j 12 install
 
 WORKDIR /labs
-ARG UNAME=student
-ARG UID=1000
-ARG GID=1000
-RUN groupadd -g $GID -o $UNAME
-RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
-RUN chown -R $UNAME:$UNAME .
-USER $UNAME
-
